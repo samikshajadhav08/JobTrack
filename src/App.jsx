@@ -1,10 +1,18 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-const App = () => {
+import Layout from "./components/layout/Layout";
+import Dashboard from "./pages/dashboard";
+
+function App() {
   return (
-    <div>
-      <h1 className="text-4xl text-center m-10">Job Track </h1>
-    </div>
-  )
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
